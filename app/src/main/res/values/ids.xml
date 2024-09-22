@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="header" type="id" />
+    <item name="tvInfo" type="id" />
+    <item name="scrollableContent" type="id" />
+    <item name="footer" type="id" />
+    <item name="tvLocalArea1" type="id" />
+    <item name="tvTemp1" type="id" />
+    <item name="tvTempVal1" type="id" />
+    <item name="tvHumi1" type="id" />
+    <item name="tvHumiVal1" type="id" />
+    <item name="tvRain1" type="id" />
+    <item name="tvRainIs1" type="id" />
+    <item name="tvLocalArea2" type="id" />
+    <item name="tvTemp2" type="id" />
+    <item name="tvTempVal2" type="id" />
+    <item name="tvHumi2" type="id" />
+    <item name="tvHumiVal2" type="id" />
+    <item name="tvRain2" type="id" />
+    <item name="tvRainIs2" type="id" />
+</resources>

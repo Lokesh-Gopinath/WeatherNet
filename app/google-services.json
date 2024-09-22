@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "923493338622",
+    "firebase_url": "https://project1-99ae0-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "project1-99ae0",
+    "storage_bucket": "project1-99ae0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:923493338622:android:4a38ea19bea986805784af",
+        "android_client_info": {
+          "package_name": "com.binary.weathernet"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnsXuvX6NpD9--H9l9kq6JFvl0JDdtJn8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:923493338622:android:9d87690022feb7005784af",
+        "android_client_info": {
+          "package_name": "com.lokjayajohn.weathernet"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnsXuvX6NpD9--H9l9kq6JFvl0JDdtJn8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:923493338622:android:15fad7b24b6943405784af",
+        "android_client_info": {
+          "package_name": "com.weatherlocal.weathernet"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnsXuvX6NpD9--H9l9kq6JFvl0JDdtJn8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
