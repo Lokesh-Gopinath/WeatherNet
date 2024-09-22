@@ -1,5 +1,6 @@
 package com.binary.weathernet
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -41,6 +42,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun fetchData() {
         database.addValueEventListener(object : ValueEventListener {
+            @SuppressLint("SetTextI18n")
             override fun onDataChange(snapshot: DataSnapshot) {
                 try {
                     Log.d("FirebaseSnapshot", "Full Snapshot: ${snapshot.value}")
@@ -53,8 +55,8 @@ class MainActivity : AppCompatActivity() {
                     Log.d("FirebaseSnapshot", "Humidity Snapshot: $humiditySnap")
                     Log.d("FirebaseSnapshot", "Rain Snapshot: $rainSnap")
 
-                    tvTempVal1.text = temperatureSnap?.toString() ?: "N/A"
-                    tvHumiVal1.text = humiditySnap?.toString() ?: "N/A"
+                    tvTempVal1.text = "${temperatureSnap?.toString() ?: "N/A"}℃"
+                    tvHumiVal1.text = "${humiditySnap?.toString() ?: "N/A"}%"
                     tvRainIs1.text = rainSnap?.toString() ?: "N/A"
 
                 } catch (e: Exception) {
