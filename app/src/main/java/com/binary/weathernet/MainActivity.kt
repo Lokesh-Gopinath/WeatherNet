@@ -35,9 +35,8 @@ class MainActivity : AppCompatActivity() {
 
         database = FirebaseDatabase.getInstance().getReference("Data")
 
-        btnGetData.setOnClickListener {
-            fetchData()
-        }
+
+        fetchData()
     }
 
     private fun fetchData() {
