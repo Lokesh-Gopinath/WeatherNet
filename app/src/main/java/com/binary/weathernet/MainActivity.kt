@@ -51,13 +51,23 @@ class MainActivity : AppCompatActivity() {
                     val humiditySnap = snapshot.child("Humidity").value
                     val rainSnap = snapshot.child("Rain").value
 
+                    val temperatureSnap2 = snapshot.child("temperature").value
+                    val humiditySnap2 = snapshot.child("Humidity").value
+                    val rainSnap2 = snapshot.child("Rain").value
+
                     Log.d("FirebaseSnapshot", "Temperature Snapshot: $temperatureSnap")
                     Log.d("FirebaseSnapshot", "Humidity Snapshot: $humiditySnap")
                     Log.d("FirebaseSnapshot", "Rain Snapshot: $rainSnap")
+                    Log.d("FirebaseSnapshot", "Temperature Snapshot: $temperatureSnap2")
+                    Log.d("FirebaseSnapshot", "Humidity Snapshot: $humiditySnap2")
+                    Log.d("FirebaseSnapshot", "Rain Snapshot: $rainSnap2")
 
                     tvTempVal1.text = "${temperatureSnap?.toString() ?: "N/A"}℃"
                     tvHumiVal1.text = "${humiditySnap?.toString() ?: "N/A"}%"
                     tvRainIs1.text = rainSnap?.toString() ?: "N/A"
+                    tvTempVal2.text = "${temperatureSnap2?.toString() ?: "N/A"}℃"
+                    tvHumiVal2.text = "${humiditySnap2?.toString() ?: "N/A"}%"
+                    tvRainIs2.text = rainSnap2?.toString() ?: "N/A"
 
                 } catch (e: Exception) {
                     Log.e("FirebaseError", "Error converting data: ${e.message}")
