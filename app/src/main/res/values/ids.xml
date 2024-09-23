@@ -18,4 +18,7 @@
     <item name="tvHumiVal2" type="id" />
     <item name="tvRain2" type="id" />
     <item name="tvRainIs2" type="id" />
+    <item name="tvHumiVal3" type="id" />
+    <item name="tvRain3" type="id" />
+    <item name="tvRainIs3" type="id" />
 </resources>

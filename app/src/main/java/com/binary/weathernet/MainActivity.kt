@@ -3,10 +3,13 @@ package com.binary.weathernet
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.database.*
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,8 +21,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tvTempVal2: TextView
     private lateinit var tvHumiVal2: TextView
     private lateinit var tvRainIs2: TextView
-    private lateinit var btnGetData: Button
+    private lateinit var tvTempVal3: TextView
+    private lateinit var tvHumiVal3: TextView
+    private lateinit var tvRainIs3: TextView
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -30,11 +36,11 @@ class MainActivity : AppCompatActivity() {
         tvTempVal2 = findViewById(R.id.tvTempVal2)
         tvHumiVal2 = findViewById(R.id.tvHumiVal2)
         tvRainIs2 = findViewById(R.id.tvRainIs2)
-
-        btnGetData = findViewById(R.id.btnGetData)
+        tvTempVal3 = findViewById(R.id.tvTempVal3)
+        tvHumiVal3 = findViewById(R.id.tvHumiVal3)
+        tvRainIs3 = findViewById(R.id.tvRainIs3)
 
         database = FirebaseDatabase.getInstance().getReference("Data")
-
 
         fetchData()
     }
@@ -54,12 +60,19 @@ class MainActivity : AppCompatActivity() {
                     val humiditySnap2 = snapshot.child("Humidity").value
                     val rainSnap2 = snapshot.child("Rain").value
 
+                    val temperatureSnap3 = snapshot.child("temperature").value
+                    val humiditySnap3 = snapshot.child("Humidity").value
+                    val rainSnap3 = snapshot.child("Rain").value
+
                     Log.d("FirebaseSnapshot", "Temperature Snapshot: $temperatureSnap")
                     Log.d("FirebaseSnapshot", "Humidity Snapshot: $humiditySnap")
                     Log.d("FirebaseSnapshot", "Rain Snapshot: $rainSnap")
                     Log.d("FirebaseSnapshot", "Temperature Snapshot: $temperatureSnap2")
                     Log.d("FirebaseSnapshot", "Humidity Snapshot: $humiditySnap2")
                     Log.d("FirebaseSnapshot", "Rain Snapshot: $rainSnap2")
+                    Log.d("FirebaseSnapshot", "Temperature Snapshot: $temperatureSnap3")
+                    Log.d("FirebaseSnapshot", "Humidity Snapshot: $humiditySnap3")
+                    Log.d("FirebaseSnapshot", "Rain Snapshot: $rainSnap3")
 
                     tvTempVal1.text = "${temperatureSnap?.toString() ?: "N/A"}℃"
                     tvHumiVal1.text = "${humiditySnap?.toString() ?: "N/A"}%"
@@ -67,6 +80,9 @@ class MainActivity : AppCompatActivity() {
                     tvTempVal2.text = "${temperatureSnap2?.toString() ?: "N/A"}℃"
                     tvHumiVal2.text = "${humiditySnap2?.toString() ?: "N/A"}%"
                     tvRainIs2.text = rainSnap2?.toString() ?: "N/A"
+                    tvTempVal3.text = "${temperatureSnap3?.toString() ?: "N/A"}℃"
+                    tvHumiVal3.text = "${humiditySnap3?.toString() ?: "N/A"}%"
+                    tvRainIs3.text = rainSnap3?.toString() ?: "N/A"
 
                 } catch (e: Exception) {
                     Log.e("FirebaseError", "Error converting data: ${e.message}")
@@ -78,5 +94,4 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
-
 }
