@@ -42,7 +42,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="#e9e9e9">
+
 
             <!-- Local Area 1 Section -->
 
@@ -53,6 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="16dp"
+                android:background="#e9e9e9"
                 android:orientation="vertical"
                 tools:ignore="TextSizeCheck">
 
@@ -77,6 +80,7 @@
                         android:layout_weight="1"
                         android:text="Temperature         :"
                         android:textSize="20sp"
+                        android:textColor="@color/black"
                         tools:ignore="HardcodedText" />
 
                     <TextView
@@ -85,6 +89,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:textSize="20sp"
+                        android:textColor="@color/black"
                         tools:text="tempval1" />
                 </LinearLayout>
 
@@ -101,6 +106,7 @@
                         android:layout_weight="1"
                         android:text="Humidity                :"
                         android:textSize="20sp"
+                        android:textColor="@color/black"
                         tools:ignore="HardcodedText" />
 
                     <TextView
@@ -109,6 +115,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:textSize="20sp"
+                        android:textColor="@color/black"
                         tools:text="humival1" />
                 </LinearLayout>
 
@@ -125,6 +132,7 @@
                         android:layout_weight="1"
                         android:text="Raining                   :"
                         android:textSize="20sp"
+                        android:textColor="@color/black"
                         tools:ignore="HardcodedText" />
 
                     <TextView
@@ -133,7 +141,32 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:textSize="20sp"
+                        android:textColor="@color/black"
                         tools:text="israin1" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp">
+
+                    <TextView
+                        android:id="@+id/tvPrbRain1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Raining probability:"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/tvPrbRainIs1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        tools:text="israinprb1" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -166,6 +199,7 @@
                         android:layout_weight="1"
                         android:text="Temperature          :"
                         android:textSize="20sp"
+                        android:textColor="@color/black"
                         tools:ignore="HardcodedText" />
 
                     <TextView
@@ -174,6 +208,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:textSize="20sp"
+                        android:textColor="@color/black"
                         tools:text="tempval2" />
                 </LinearLayout>
 
@@ -190,6 +225,7 @@
                         android:layout_weight="1"
                         android:text="Humidity                 :"
                         android:textSize="20sp"
+                        android:textColor="@color/black"
                         tools:ignore="HardcodedText" />
 
                     <TextView
@@ -198,6 +234,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:textSize="20sp"
+                        android:textColor="@color/black"
                         tools:text="humival2" />
                 </LinearLayout>
 
@@ -214,6 +251,7 @@
                         android:layout_weight="1"
                         android:text="Raining                    :"
                         android:textSize="20sp"
+                        android:textColor="@color/black"
                         tools:ignore="HardcodedText" />
 
                     <TextView
@@ -222,7 +260,32 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:textSize="20sp"
+                        android:textColor="@color/black"
                         tools:text="israin2" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp">
+
+                    <TextView
+                        android:id="@+id/tvPrbRain2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Raining Probabilty:"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/tvPrbRainIs2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        tools:text="israinprb2" />
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
@@ -254,6 +317,7 @@
                         android:layout_weight="1"
                         android:text="Temperature         :"
                         android:textSize="20sp"
+                        android:textColor="@color/black"
                         tools:ignore="HardcodedText" />
 
                     <TextView
@@ -262,6 +326,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:textSize="20sp"
+                        android:textColor="@color/black"
                         tools:text="tempval3" />
                 </LinearLayout>
 
@@ -278,6 +343,7 @@
                         android:layout_weight="1"
                         android:text="Humidity                :"
                         android:textSize="20sp"
+                        android:textColor="@color/black"
                         tools:ignore="HardcodedText" />
 
                     <TextView
@@ -286,6 +352,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:textSize="20sp"
+                        android:textColor="@color/black"
                         tools:text="humival3" />
                 </LinearLayout>
 
@@ -302,6 +369,7 @@
                         android:layout_weight="1"
                         android:text="Raining                   :"
                         android:textSize="20sp"
+                        android:textColor="@color/black"
                         tools:ignore="HardcodedText" />
 
                     <TextView
@@ -310,7 +378,32 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:textSize="20sp"
+                        android:textColor="@color/black"
                         tools:text="israin3" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp">
+
+                    <TextView
+                        android:id="@+id/tvPrbRain3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Raining                   :"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/tvPrbRainIs3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        tools:text="israinprb3" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
