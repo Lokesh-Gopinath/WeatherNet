@@ -26,9 +26,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tvTempVal3: TextView
     private lateinit var tvHumiVal3: TextView
     private lateinit var tvRainIs3: TextView
-    private lateinit var tvPrbRain1: TextView
-    private lateinit var tvPrbRain2: TextView
-    private lateinit var tvPrbRain3: TextView
+    private lateinit var tvPrbRainIs1: TextView
+    private lateinit var tvPrbRainIs2: TextView
+    private lateinit var tvPrbRainIs3: TextView
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,15 +41,15 @@ class MainActivity : AppCompatActivity() {
         tvTempVal1 = findViewById(R.id.tvTempVal1)
         tvHumiVal1 = findViewById(R.id.tvHumiVal1)
         tvRainIs1 = findViewById(R.id.tvRainIs1)
-        tvPrbRain1 = findViewById(R.id.tvPrbRain1)
+        tvPrbRainIs1 = findViewById(R.id.tvPrbRainIs1)
         tvTempVal2 = findViewById(R.id.tvTempVal2)
         tvHumiVal2 = findViewById(R.id.tvHumiVal2)
         tvRainIs2 = findViewById(R.id.tvRainIs2)
-        tvPrbRain2 = findViewById(R.id.tvPrbRain2)
+        tvPrbRainIs2 = findViewById(R.id.tvPrbRainIs2)
         tvTempVal3 = findViewById(R.id.tvTempVal3)
         tvHumiVal3 = findViewById(R.id.tvHumiVal3)
         tvRainIs3 = findViewById(R.id.tvRainIs3)
-        tvPrbRain3 = findViewById(R.id.tvPrbRain3)
+        tvPrbRainIs3 = findViewById(R.id.tvPrbRainIs3)
 
         database = FirebaseDatabase.getInstance().getReference("Data")
 
@@ -58,7 +58,8 @@ class MainActivity : AppCompatActivity() {
     fun isRaining(temperature: Double, humidity: Double): Boolean {
         val highHumidityThreshold = 80.0
         val lowTemperatureThreshold = 25.0
-        return if (humidity > highHumidityThreshold && temperature < lowTemperatureThreshold) {
+
+        return if (humidity > highHumidityThreshold && temperature < lowTemperatureThreshold || highHumidityThreshold <= humidity) {
             true
         } else {
             false
@@ -69,67 +70,43 @@ class MainActivity : AppCompatActivity() {
             @SuppressLint("SetTextI18n")
             override fun onDataChange(snapshot: DataSnapshot) {
                 try {
-                    Log.d("FirebaseSnapshot", "Full Snapshot: ${snapshot.value}")
+                    // Extract values safely
+                    val temperatureSnap = snapshot.child("temperature").value?.toString()?.toDoubleOrNull()
+                    val humiditySnap = snapshot.child("Humidity").value?.toString()?.toDoubleOrNull()
+                    val rainSnap = snapshot.child("Rain").value?.toString()
 
-                    val temperatureSnap = snapshot.child("temperature").value
-                    val humiditySnap = snapshot.child("Humidity").value
-                    val rainSnap = snapshot.child("Rain").value
+                    val temperatureSnap2 = snapshot.child("temperature2").value?.toString()?.toDoubleOrNull()
+                    val humiditySnap2 = snapshot.child("Humidity2").value?.toString()?.toDoubleOrNull()
+                    val rainSnap2 = snapshot.child("Rain2").value?.toString()
 
-                    val temperatureSnap2 = snapshot.child("temperature").value
-                    val humiditySnap2 = snapshot.child("Humidity").value
-                    val rainSnap2 = snapshot.child("Rain").value
+                    val temperatureSnap3 = snapshot.child("temperature3").value?.toString()?.toDoubleOrNull()
+                    val humiditySnap3 = snapshot.child("Humidity3").value?.toString()?.toDoubleOrNull()
+                    val rainSnap3 = snapshot.child("Rain3").value?.toString()
 
-                    val temperatureSnap3 = snapshot.child("temperature").value
-                    val humiditySnap3 = snapshot.child("Humidity").value
-                    val rainSnap3 = snapshot.child("Rain").value
-
-                    Log.d("FirebaseSnapshot", "Temperature Snapshot: $temperatureSnap")
-                    Log.d("FirebaseSnapshot", "Humidity Snapshot: $humiditySnap")
-                    Log.d("FirebaseSnapshot", "Rain Snapshot: $rainSnap")
-
-                    Log.d("FirebaseSnapshot", "Temperature Snapshot: $temperatureSnap2")
-                    Log.d("FirebaseSnapshot", "Humidity Snapshot: $humiditySnap2")
-                    Log.d("FirebaseSnapshot", "Rain Snapshot: $rainSnap2")
-
-                    Log.d("FirebaseSnapshot", "Temperature Snapshot: $temperatureSnap3")
-                    Log.d("FirebaseSnapshot", "Humidity Snapshot: $humiditySnap3")
-                    Log.d("FirebaseSnapshot", "Rain Snapshot: $rainSnap3")
-
-                    val raining = isRaining(temperatureSnap as Double, humiditySnap as Double)
-
-                    if (raining) {
-                        tvPrbRain1.text=("likely to rain.")
-                    } else {
-                        tvPrbRain1.text=("unlikely to rain.")
+                    // Check for null values before proceeding
+                    if (temperatureSnap != null && humiditySnap != null) {
+                        val raining = isRaining(temperatureSnap, humiditySnap)
+                        tvPrbRainIs1.text = if (raining) "likely to rain." else "unlikely to rain."
+                        tvTempVal1.text = "%.2f℃".format(temperatureSnap)
+                        tvHumiVal1.text = "$humiditySnap%"
+                        tvRainIs1.text = rainSnap ?: "N/A"
                     }
 
-                    val raining2 = isRaining(temperatureSnap2 as Double, humiditySnap2 as Double)
-
-                    if (raining2) {
-                        tvPrbRain1.text=("likely to rain.")
-                    } else {
-                        tvPrbRain1.text=("unlikely to rain.")
+                    if (temperatureSnap2 != null && humiditySnap2 != null) {
+                        val raining2 = isRaining(temperatureSnap2, humiditySnap2)
+                        tvPrbRainIs2.text = if (raining2) "likely to rain." else "unlikely to rain."
+                        tvTempVal2.text = "%.2f℃".format(temperatureSnap2)
+                        tvHumiVal2.text = "$humiditySnap2%"
+                        tvRainIs2.text = rainSnap2 ?: "N/A"
                     }
 
-                    val raining3 = isRaining(temperatureSnap3 as Double, humiditySnap3 as Double)
-
-                    if (raining3) {
-                        tvPrbRain1.text=("likely to rain.")
-                    } else {
-                        tvPrbRain1.text=("unlikely to rain.")
+                    if (temperatureSnap3 != null && humiditySnap3 != null) {
+                        val raining3 = isRaining(temperatureSnap3, humiditySnap3)
+                        tvPrbRainIs3.text = if (raining3) "likely to rain." else "unlikely to rain."
+                        tvTempVal3.text = "%.2f℃".format(temperatureSnap3)
+                        tvHumiVal3.text = "$humiditySnap3%"
+                        tvRainIs3.text = rainSnap3 ?: "N/A"
                     }
-
-                    tvTempVal1.text = "${temperatureSnap?.toString()}℃"
-                    tvHumiVal1.text = "${humiditySnap?.toString()}%"
-                    tvRainIs1.text = rainSnap?.toString() ?: "N/A"
-
-                    tvTempVal2.text = "${temperatureSnap2?.toString() ?: "N/A"}℃"
-                    tvHumiVal2.text = "${humiditySnap2?.toString() ?: "N/A"}%"
-                    tvRainIs2.text = rainSnap2?.toString() ?: "N/A"
-
-                    tvTempVal3.text = "${temperatureSnap3?.toString() ?: "N/A"}℃"
-                    tvHumiVal3.text = "${humiditySnap3?.toString() ?: "N/A"}%"
-                    tvRainIs3.text = rainSnap3?.toString() ?: "N/A"
 
                 } catch (e: Exception) {
                     Log.e("FirebaseError", "Error converting data: ${e.message}")
@@ -137,8 +114,9 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                Log.e("FirebaseError", "Database error: ${error.message}")
+                TODO("Not yet implemented")
             }
+
         })
     }
 }

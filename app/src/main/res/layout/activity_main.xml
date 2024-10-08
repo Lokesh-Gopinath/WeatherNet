@@ -78,7 +78,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Temperature         :"
+                        android:text="Temperature          :"
                         android:textSize="20sp"
                         android:textColor="@color/black"
                         tools:ignore="HardcodedText" />
@@ -91,6 +91,7 @@
                         android:textSize="20sp"
                         android:textColor="@color/black"
                         tools:text="tempval1" />
+
                 </LinearLayout>
 
                 <!-- Humidity -->
@@ -104,7 +105,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Humidity                :"
+                        android:text="Humidity                 :"
                         android:textSize="20sp"
                         android:textColor="@color/black"
                         tools:ignore="HardcodedText" />
@@ -130,7 +131,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Raining                   :"
+                        android:text="Raining                    :"
                         android:textSize="20sp"
                         android:textColor="@color/black"
                         tools:ignore="HardcodedText" />
@@ -154,7 +155,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Raining probability:"
+                        android:text="Rain probability     :"
                         android:textSize="20sp"
                         android:textColor="@color/black"
                         tools:ignore="HardcodedText" />
@@ -249,7 +250,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Raining                    :"
+                        android:text="Raining                   :"
                         android:textSize="20sp"
                         android:textColor="@color/black"
                         tools:ignore="HardcodedText" />
@@ -273,7 +274,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Raining Probabilty:"
+                        android:text="Rain probability     :"
                         android:textSize="20sp"
                         android:textColor="@color/black"
                         tools:ignore="HardcodedText" />
@@ -292,7 +293,7 @@
                 android:layout_width="349dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="28dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="20dp"
                 android:orientation="vertical"
                 tools:ignore="TextSizeCheck">
 
@@ -315,7 +316,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Temperature         :"
+                        android:text="Temperature          :"
                         android:textSize="20sp"
                         android:textColor="@color/black"
                         tools:ignore="HardcodedText" />
@@ -341,7 +342,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Humidity                :"
+                        android:text="Humidity                 :"
                         android:textSize="20sp"
                         android:textColor="@color/black"
                         tools:ignore="HardcodedText" />
@@ -367,7 +368,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Raining                   :"
+                        android:text="Raining                    :"
                         android:textSize="20sp"
                         android:textColor="@color/black"
                         tools:ignore="HardcodedText" />
@@ -391,7 +392,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Raining                   :"
+                        android:text="Rain probability     :"
                         android:textSize="20sp"
                         android:textColor="@color/black"
                         tools:ignore="HardcodedText" />
@@ -406,6 +407,12 @@
                         tools:text="israinprb3" />
                 </LinearLayout>
             </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </LinearLayout>
     </ScrollView>
 
