@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!--this is the main settings that is used for internet permission//-->
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
