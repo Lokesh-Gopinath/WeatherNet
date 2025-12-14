@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--these are the main variable assigned here to be used in the code-->
     <item name="header" type="id" />
     <item name="tvInfo" type="id" />
     <item name="scrollableContent" type="id" />
