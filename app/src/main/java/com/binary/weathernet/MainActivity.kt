@@ -1,5 +1,7 @@
 package com.binary.weathernet
 
+//importing only the necessary libs
+
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -22,6 +24,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //Main variable are assigned here
 
         tvTempVal1 = findViewById(R.id.tvTempVal1)
         tvHumiVal1 = findViewById(R.id.tvHumiVal1)
