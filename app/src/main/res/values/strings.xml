@@ -1,4 +1,5 @@
 <resources>
+    <!--here add any string that is used in the layout-->
     <string name="app_name">WeatherNet</string>
     <string name="welcome_message">Welcome to WeatherNet</string>
     <!-- Add other strings here -->
