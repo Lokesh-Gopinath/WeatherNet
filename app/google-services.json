@@ -1,68 +1,44 @@
 {
   "project_info": {
-    "project_number": "923493338622",
-    "firebase_url": "https://project1-99ae0-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "project1-99ae0",
-    "storage_bucket": "project1-99ae0.appspot.com"
+    "project_number": "",  // Enter your Firebase project number here
+    "firebase_url": "https://YOUR-FIREBASE-URL.firebaseio.com",  // Replace with your Firebase URL
+    "project_id": "",  // Enter your Firebase project ID here
+    "storage_bucket": ""  // Enter your Firebase storage bucket URL here
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:923493338622:android:4a38ea19bea986805784af",
+        "mobilesdk_app_id": "",  // Enter the mobilesdk app ID for the first client here
         "android_client_info": {
-          "package_name": "com.binary.weathernet"
+          "package_name": ""  // Enter the Android app package name for the first client here
         }
       },
-      "oauth_client": [],
+      "oauth_client": [],  // If you have OAuth clients, add them here
       "api_key": [
         {
-          "current_key": "AIzaSyDnsXuvX6NpD9--H9l9kq6JFvl0JDdtJn8"
+          "current_key": ""  // Enter the API key for this client here
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": []  // If applicable, add OAuth clients for other platforms here
         }
       }
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:923493338622:android:9d87690022feb7005784af",
+        "mobilesdk_app_id": "",  // Enter the mobilesdk app ID for the second client here
         "android_client_info": {
-          "package_name": "com.lokjayajohn.weathernet"
+          "package_name": ""  // Enter the Android app package name for the second client here
         }
       },
-      "oauth_client": [],
+      "oauth_client": [],  // If you have OAuth clients, add them here
       "api_key": [
         {
-          "current_key": "AIzaSyDnsXuvX6NpD9--H9l9kq6JFvl0JDdtJn8"
+          "current_key": ""  // Enter the API key for this second client here
         }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:923493338622:android:15fad7b24b6943405784af",
-        "android_client_info": {
-          "package_name": "com.weatherlocal.weathernet"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDnsXuvX6NpD9--H9l9kq6JFvl0JDdtJn8"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
+      ]
     }
-  ],
-  "configuration_version": "1"
+  ]
 }
+
